@@ -48,7 +48,7 @@ bindsym $mod+q kill
 
 # start dmenu (a program launcher)
 bindsym $mod+p exec rofi -show drun
-bindsym $mod+Return exec start-brave
+bindsym $mod+space exec start-brave
 
 
 
@@ -85,6 +85,7 @@ bindsym $mod+ctrl+l move right
 
 bindsym --release Print exec screen-shot
 bindsym $mod+ctrl+t exec konsole
+bindsym $mod+Return exec konsole
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Shift+Left move left
@@ -113,7 +114,7 @@ bindsym $mod+e layout toggle split
 bindsym $mod+Shift+space floating toggle
 
 # change focus between tiling / floating windows
-bindsym $mod+space focus mode_toggle
+# bindsym $mod+space focus mode_toggle
 
 # focus the parent container
 bindsym $mod+a focus parent
