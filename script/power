@@ -1,0 +1,26 @@
+#!/bin/bash
+
+CHOICE=$(printf "关机\n重启\n强制重启\n强制关机\n" | rofi -dmenu)
+
+
+case $CHOICE in 
+	"关机")
+		sudo killall openvpn
+		poweroff
+		;;
+	"重启")
+		sudo killall openvpn
+		reboot
+		;;
+	"强制重启")
+		sudo killall openvpn
+		sudo reboot -f
+		;;
+	"强制关机")
+		sudo killall openvpn
+		sudo reboot -f
+		;;
+	*)
+		echo "chose nothing"
+		;;
+esac
