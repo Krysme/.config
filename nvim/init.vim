@@ -23,4 +23,4 @@ nnoremap <C-y> 5<C-y>
 
 
 set number
-set mouse=a
+set mouse=
