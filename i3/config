@@ -50,6 +50,9 @@ bindsym $mod+q kill
 bindsym $mod+p exec rofi -show drun
 bindsym $mod+space exec start-brave
 
+# power control
+bindsym $mod+ctrl+x exec power
+
 
 
 bindsym $mod+ctrl+n exec volume -5%
@@ -84,7 +87,7 @@ bindsym $mod+ctrl+l move right
 
 
 bindsym --release Print exec screen-shot
-bindsym $mod+ctrl+t exec konsole
+# bindsym $mod+ctrl+t exec konsole
 bindsym $mod+Return exec konsole
 
 # alternatively, you can use the cursor keys:
@@ -103,7 +106,6 @@ bindsym $mod+Shift+Right move right
 bindsym $mod+v split v
 
 # enter fullscreen mode for the focused container
-bindsym $mod+f fullscreen toggle
 
 # change container layout (stacked, tabbed, toggle split)
 bindsym $mod+s layout stacking
@@ -174,10 +176,10 @@ mode "resize" {
         # Pressing right will grow the window’s width.
         # Pressing up will shrink the window’s height.
         # Pressing down will grow the window’s height.
-        bindsym j resize shrink width 10 px or 10 ppt
-        bindsym k resize grow height 10 px or 10 ppt
-        bindsym l resize shrink height 10 px or 10 ppt
-        bindsym semicolon resize grow width 10 px or 10 ppt
+        bindsym h resize shrink width 10 px or 10 ppt
+        bindsym j resize grow height 10 px or 10 ppt
+        bindsym k resize shrink height 10 px or 10 ppt
+        bindsym l resize grow width 10 px or 10 ppt
 
         # same bindings, but for the arrow keys
         bindsym Left resize shrink width 10 px or 10 ppt
@@ -189,14 +191,25 @@ mode "resize" {
         bindsym Return mode "default"
         bindsym Escape mode "default"
         bindsym $mod+r mode "default"
+        bindsym ctrl+bracketleft mode "default"
 }
+
+mode "space" {
+	bindsym f fullscreen toggle; mode "default"
+	bindsym r mode "resize"
+        bindsym Escape mode "default"
+        bindsym ctrl+bracketleft mode "default"
+}
+
+
+
 
 for_window [class=".*"] border pixel 4
 
 gaps inner 10
 gaps outer 1
 
-bindsym $mod+r mode "resize"
+bindsym ctrl+space mode "space"
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
